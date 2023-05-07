@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download de Músicas</title>
+  <script>function enviarFormulario() {
+    const form = document.querySelector('#formulario-upload');
+    const formData = new FormData(form);
+  
+    fetch('upload.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+  }
+  
+  const btnEnviar = document.querySelector('#btn-enviar');
+  btnEnviar.addEventListener('click', enviarFormulario);
+  </script>
+</head>
+<body>
+    <php
+    if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] == 0) {
+    $nome_arquivo = $_FILES['arquivo']['name'];
+    $temporario = $_FILES['arquivo']['tmp_name'];
+    $diretorio = 'uploads/';
+  
+    if (move_uploaded_file($temporario, $diretorio . $nome_arquivo)) {
+      $mensagem = 'Arquivo enviado com sucesso!';
+    } else {
+      $mensagem = 'Erro ao enviar arquivo.';
+    }
+  } else {
+    $mensagem = 'Nenhum arquivo enviado.';
+  }
+  
+  echo json_encode(['mensagem' => $mensagem]);
+</php>
+
+
+  <header>
+    <h1>Ajhulay Enterteniment</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main>
+    <section>
+      <h2>Músicas Populares</h2>
+      <ul>
+        <li>
+          <img src="imagem/rorgive.jpg" alt="Nome da música">
+          <h3>Abes ft Genio</h3>
+          <p>Artista</p>
+          <a href="audio/ABS.mp3" download>Baixar</a>
+        </li>
+        <li>
+          <img src="caminho/para/imagem.jpg" alt="Nome da música">
+          <h3>Nome da música</h3>
+          <p>Artista</p>
+          <a href="caminho/para/arquivo.mp3" download>Baixar</a>
+        </li>
+        <li>
+          <img src="caminho/para/imagem.jpg" alt="Nome da música">
+          <h3>Nome da música</h3>
+          <p>Artista</p>
+          <a href="caminho/para/arquivo.mp3" download>Baixar</a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Enviar Música</h2>
+      <form action="upload.php" method="post" enctype="multipart/form-data">
+  <label for="titulo">Título:</label>
+  <input type="text" name="titulo" id="titulo">
+  <br>
+  <label for="artista">Artista:</label>
+  <input type="text" name="artista" id="artista">
+  <br>
+  <label for="album">Álbum:</label>
+  <input type="text" name="album" id="album">
+  <br>
+  <label for="arquivo">Arquivo:</label>
+  <input type="file" name="arquivo" id="arquivo">
+  <br>
+  <input type="submit" value="Enviar">
+</form>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Enviar" name="submit">
+</form>
+
+
+
+
+  <footer>
+    <p>Atenção: É proibido o envio de conteúdos ofensivos ou inadequados. Qualquer conteúdo desse tipo será removido e o usuário responsável poderá ser banido.</p>
+</div>
+  </footer>
+</body>
+</html>

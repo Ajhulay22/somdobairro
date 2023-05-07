@@ -1,0 +1,139 @@
+header {
+    background-color: #123838;
+    color: #331111;
+    padding: 10px;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  section {
+    margin: 20px 0;
+  }
+  
+  section h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+    color: #faf9f9;
+  }
+  
+  section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #faf8f8;
+  }
+  
+  section ul li {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+    width: 20%;
+  }
+  
+  section ul li img {
+    display: block;
+    height: 150px;
+    margin-bottom: 10px;
+    width: 50%;
+  }
+  
+  section ul li h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  section ul li p {
+    margin: 5px 0 10px;
+  }
+  
+  section ul li a {
+    background-color: #96aa96;
+    color: #c5bdbd;
+    display: block;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  form input,
+  form select {
+    border: 1px solid #867777;
+    padding: 5px;
+  }
+  
+  form input[type="text"],
+  form select {
+    width: 32%;
+  }
+  
+  form input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  form button {
+    background-color: #96aa96;
+    color: #070000;
+    padding: 5px 10px;
+    text-align:center;
+    text-decoration: none;
+  }
+  form {
+    margin: 20px auto;
+    width: 80%;
+    text-align:center;
+  }
+  
+  input[type=file] {
+    display: block;
+    margin: 10px auto;
+  }
+  
+  input[type=submit] {
+    display: block;
+    margin: 10px auto;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+   
+  footer {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  body {
+    background-image: url("imagem/guitar.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+      
